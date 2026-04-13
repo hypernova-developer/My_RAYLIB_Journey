@@ -19,6 +19,7 @@ Each folder represents a milestone in my learning path, from basic window manage
 
 ---
 *Maintained with discipline by **hypernova-developer**.*
+*Protected by **Hypernova-Developer Nova Public License v2.0**.*
 
 ### Thanks to:
 - Sir Ramon Santamaria as the owner of Raylib
