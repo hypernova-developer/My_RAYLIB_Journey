@@ -26,3 +26,17 @@ Each folder represents a milestone in my learning path, from basic window manage
 - Sir Nick as the owner of the playlist I'm using to learn Raylib
 - Sir Linus Torvalds for creating this excellent platform
 - YOU for your supports <3
+
+### Episodes I Completed
+- [*] EP. 1
+- [ ] EP. 2
+- [ ] EP. 3
+- [ ] EP. 4
+- [ ] EP. 5
+- [ ] EP. 6
+- [ ] EP. 7
+- [ ] EP. 8
+- [ ] EP. 9
+- [ ] EP. 10
+- [ ] EP. 11
+- [ ] EP. 12
