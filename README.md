@@ -1,4 +1,4 @@
-# I'm-Learning-Raylib 🚀
+# I'm Learning Raylib 🚀
 
 Welcome to my Raylib learning laboratory! This repository is a dedicated space where I document my daily progress, experiments, and procedural C++ implementations as I dive into game development.
 
