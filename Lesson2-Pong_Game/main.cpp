@@ -18,7 +18,7 @@ int main()
     const int screenHeight = 800;
     const int targetedFPS = 60;
 
-    InitWindow(screenWidth, screenHeight, "My Pong Game-1 =]");
+    InitWindow(screenWidth, screenHeight, "My Pong Game-3 =]");
     SetTargetFPS(targetedFPS);
 
     // Main Code of the Game
@@ -26,7 +26,14 @@ int main()
     while (WindowShouldClose() == false)
     {
         BeginDrawing();
-        //Things that will be drewn should stay here until EndDrawing();
+        // Things that will be drewn should stay here until EndDrawing();
+        // Drawing Something...
+        DrawCircle(screenWidth / 2, screenHeight / 2, 20, WHITE);
+
+        // The Paddles as Rectangles
+        DrawRectangle(10, screenHeight / 2 - 60, 25, 120, WHITE);
+        DrawRectangle(screenWidth - 35, screenHeight / 2 - 60, 25, 120, WHITE);
+        
         
 
         EndDrawing();
