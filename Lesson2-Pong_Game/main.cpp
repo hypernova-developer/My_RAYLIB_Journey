@@ -25,6 +25,8 @@ public:
         x += speedX;
         y += speedY;
 
+        // What if they touch to the edge? These: 
+        
         if (y + radius >= GetScreenHeight() || y - radius <= 0)
         {
             speedY *= -1;
