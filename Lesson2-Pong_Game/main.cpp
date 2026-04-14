@@ -5,6 +5,15 @@
 
 using namespace std;
 
+Color Green = Color{38, 185, 154, 255};
+Color Dark_Green = Color{20, 160, 133, 255};
+Color Light_Green = Color{129, 204, 184, 255};
+Color Yellow = Color{243, 213, 91, 255};
+
+
+int player_score = 0;
+int cpu_score = 0;
+
 class Ball
 {
 public:
@@ -17,7 +26,7 @@ public:
     void Draw()
     {
         // Drawing the Ball as a Circle...
-        DrawCircle(x, y, radius, WHITE);
+        DrawCircle(x, y, radius, Yellow);
     }
 
     void Update()
@@ -31,10 +40,27 @@ public:
         {
             speedY *= -1;
         }
-        if (x + radius >= GetScreenWidth() || x - radius <= 0)
+        if (x + radius >= GetScreenWidth()) // CPU Wins
         {
-            speedX *= -1;
+            cpu_score++;
+            ResetBall();
         }
+        
+        if (x - radius <= 0) // Player Wins
+        {
+            player_score++;
+            ResetBall();
+        }
+    }
+
+    void ResetBall()
+    {
+        x = GetScreenWidth() / 2;
+        y = GetScreenHeight() / 2;
+
+        int speed_choices[2] = {-1, 1};
+        speedX *= speed_choices[GetRandomValue(0,1)];
+        speedY *= speed_choices[GetRandomValue(0,1)];
     }
 };
 
@@ -62,7 +88,7 @@ public:
 
     void Draw()
     {
-        DrawRectangle(x, y, width, height, WHITE);
+        DrawRectangleRounded(Rectangle{x, y, width, height}, 0.8, 0, WHITE);
     }
 
     void Update()
@@ -113,7 +139,7 @@ int main()
     const int screenHeight = 800;
     const int targetedFPS = 60;
 
-    InitWindow(screenWidth, screenHeight, "My Pong Game-7 =]");
+    InitWindow(screenWidth, screenHeight, "Hy-Pong");
     SetTargetFPS(targetedFPS);
 
     // Initializing the Ball...
@@ -151,17 +177,27 @@ int main()
         player.Update();
         cpu.Update(ball.y);
 
-        // Things that will be drewn should stay here until EndDrawing();
-        ball.Draw();
-        cpu.Draw();
+        // Checking for Collision
+        
+        if (CheckCollisionCircleRec(Vector2 {ball.x, ball.y}, ball.radius, Rectangle {player.x, player.y, player.width, player.height}))
+        {
+            ball.speedX *= -1;
+        }
+        if (CheckCollisionCircleRec(Vector2 {ball.x, ball.y}, ball.radius, Rectangle {cpu.x, cpu.y, cpu.width, cpu.height}))
+        {
+            ball.speedX*= -1;
+        }
 
         // Drawing the Paddles as Rectangles...
-        ClearBackground(BLACK);
-        player.Draw();
-        
-        // Drawing the Central Line as a Line
+        ClearBackground(Dark_Green);
+        DrawRectangle(screenWidth / 2, 0, screenWidth / 2, screenHeight, Green);
+        DrawCircle(screenWidth / 2, screenHeight / 2, 150, Light_Green);
         DrawLine(screenWidth / 2, 0, screenWidth / 2, screenHeight, WHITE);
-
+        ball.Draw();
+        cpu.Draw();
+        player.Draw();
+        DrawText(TextFormat("%i", cpu_score), screenWidth / 4 -20, 20, 80, WHITE);
+        DrawText(TextFormat("%i", player_score), 3 * screenWidth / 4 -20, 20, 80, WHITE);
 
         EndDrawing();
     }
