@@ -7,11 +7,10 @@
 #include <ctime>
 #include <raylib.h>
 
-// Setting the namespace
+// Setting up the colors
+Color LIGHT_BLUE = {225, 239, 240, 255};
 
 using namespace std;
-
-// Not to type the sleep funstion always
 
 void SleepForMilliSeconds(int ms)
 {
@@ -23,7 +22,7 @@ int main()
     cout << "Initializing the system and the clock... " << endl;
     SleepForMilliSeconds(350);
 
-    // Setting the window variables
+    // Setting the window's variables
     const int WINDOW_HEIGHT = 600;
     const int WINDOW_WIDTH = 600;
 
@@ -32,7 +31,6 @@ int main()
     SetTargetFPS(15);
 
     // Main Loop
-
     while (WindowShouldClose() == false)
     {
         // 1. Event Handling
@@ -42,6 +40,7 @@ int main()
         // 3. Drawing
 
         BeginDrawing();
+        ClearBackground(LIGHT_BLUE);
 
         EndDrawing();
     }
