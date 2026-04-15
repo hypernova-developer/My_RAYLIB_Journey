@@ -1,11 +1,10 @@
-// Libraries
-
 #include <iostream>
 #include <chrono>
 #include <thread>
 #include <cmath>
 #include <ctime>
 #include <raylib.h>
+#include "AnalogClock.hpp"
 
 // Setting up the colors
 Color LIGHT_BLUE = {225, 239, 240, 255};
