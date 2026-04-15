@@ -1,10 +1,9 @@
 #include <iostream>
 #include <chrono>
 #include <thread>
-#include <cmath>
-#include <ctime>
 #include <raylib.h>
 #include "AnalogClock.hpp"
+#include "AnalogClock.cpp"
 
 // Setting up the colors
 Color LIGHT_BLUE = {225, 239, 240, 255};
@@ -29,6 +28,8 @@ int main()
     InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "Hy-Clock");
     SetTargetFPS(15);
 
+    AnalogClock clock {250, {300, 300}};
+
     // Main Loop
     while (WindowShouldClose() == false)
     {
@@ -40,6 +41,7 @@ int main()
 
         BeginDrawing();
         ClearBackground(LIGHT_BLUE);
+        clock.Draw();
 
         EndDrawing();
     }
