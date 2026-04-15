@@ -32,7 +32,7 @@ Each folder represents a milestone in my learning path, from basic window manage
 - [*] EP. 2
 - [ ] EP. 3
 - [*] EP. 4
-- [ ] EP. 5
+- [*] EP. 5
 - [ ] EP. 6
 - [ ] EP. 7
 - [ ] EP. 8

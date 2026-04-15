@@ -1,11 +1,13 @@
 #pragma once
 #include <raylib.h>
+#include <ctime>
 
 class AnalogClock
 {
 public:
-    AnalogClock(int size, Vector2 position) :size(size), position(position) {};
+    AnalogClock(int size, Vector2 position) :size(size), position(position), hour(0), minute(0), second(0) {};
     void Draw() const;
+    void Update();
 
 private:
     void DrawFace() const;
@@ -17,5 +19,9 @@ private:
 
     int size;
     Vector2 position;
+
+    int hour;
+    int minute;
+    int second;
 
 };

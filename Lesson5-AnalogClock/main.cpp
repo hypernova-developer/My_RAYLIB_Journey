@@ -20,7 +20,6 @@ int main()
     cout << "Initializing the system and the clock... " << endl;
     SleepForMilliSeconds(350);
 
-    // Setting the window's variables
     const int WINDOW_HEIGHT = 600;
     const int WINDOW_WIDTH = 600;
 
@@ -33,11 +32,7 @@ int main()
     // Main Loop
     while (WindowShouldClose() == false)
     {
-        // 1. Event Handling
-
-        // 2. Updating
-
-        // 3. Drawing
+        clock.Update();
 
         BeginDrawing();
         ClearBackground(LIGHT_BLUE);
