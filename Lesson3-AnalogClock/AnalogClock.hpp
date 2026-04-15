@@ -10,6 +10,8 @@ public:
 private:
     void DrawFace() const;
     void DrawHourMarks() const;
+    void DrawMinuteHand(int minute) const;
+
     int size;
     Vector2 position;
 
