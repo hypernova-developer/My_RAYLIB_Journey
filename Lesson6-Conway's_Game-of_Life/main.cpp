@@ -16,10 +16,10 @@ void SleepForMilliSeconds(int ms)
     this_thread::sleep_for(chrono::milliseconds(ms));
 }
 
-void RunProgram()
+int main()
 {
     cout << "Initializing the program... " << endl;
-    SleepForMilliSeconds(2000);
+    SleepForMilliSeconds(300);
     
     const int WINDOW_WIDTH = 750;
     const int WINDOW_HEIGHT = 750;
@@ -27,7 +27,11 @@ void RunProgram()
 
     InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "Conway's Game of Life");
     SetTargetFPS(12);
+
     Simulation simulation {WINDOW_WIDTH, WINDOW_HEIGHT, CELL_SIZE};
+    simulation.SetCellValue(5, 29, 1);
+
+    // cout << simulation.CountLiveNeighbors(3, 4) << endl;
 
     while (WindowShouldClose() == false)
     {
@@ -39,11 +43,7 @@ void RunProgram()
     }
 
     CloseWindow();
-}
 
-int main()
-{
-    RunProgram();
-    SleepForMilliSeconds(500);
+    SleepForMilliSeconds(300);
     return 0;
 }
