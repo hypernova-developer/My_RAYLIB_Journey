@@ -54,4 +54,4 @@ Any dead cell with **exactly three** live neighbors becomes a live cell, as if b
 ## 💡 Tips for Architects
 * **Monitor Status:** Check the **Window Title** to see if the simulation is currently "Running" or "Stopped".
 * **Experimental Drawing:** Pause the simulation with **SPACE**, use **C** to clear the board, and then draw your custom "seed" patterns (like Gliders or Small Exploders) before hitting **ENTER**.
-* **Speed Management:** Use **F** and **S** to find the perfect balance for observing complex evolutions or rapid stability tests.
+* **Speed Management:** Use **F** and **S** to find the perfect balance for observing complex evolutions or rapid stability tests. 
