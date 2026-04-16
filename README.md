@@ -33,10 +33,10 @@ Each folder represents a milestone in my learning path, from basic window manage
 - [ ] EP. 3
 - [*] EP. 4
 - [*] EP. 5
-- [ ] EP. 6
+- [*] EP. 6
 - [ ] EP. 7
 - [ ] EP. 8
-- [ ] EP. 9
+- [*] EP. 9
 - [ ] EP. 10
 - [ ] EP. 11
 - [ ] EP. 12
